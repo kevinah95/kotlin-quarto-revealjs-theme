@@ -28,3 +28,11 @@ Use list:
 
 You can learn more about controlling the appearance of RevealJS output here: <https://quarto.org/docs/presentations/revealjs/>
 
+## Code
+
+```{.kotlin filename="main.kt"}
+fun main(args: Array<String>) {
+    val nombre = args.getOrNull(0)?.takeIf { it.isNotBlank() } ?: "Kotlin"
+    println("¡Hola, $nombre!")
+}
+```

@@ -20,10 +20,18 @@ $presentation-font-size-root: 40px !default;
 // Headings
 $presentation-heading-font: $quarto-font-heading;
 $presentation-heading-font-weight: normal;
-$headingMargin: 0 0 70px 0;
+$headingMargin: 0 0 30px 0;
+
+// Header font sizes
+$presentation-h1-font-size: 1.5em !default;
+$presentation-h2-font-size: 1.2em !default;
+$presentation-h3-font-size: 1.0em !default;
+$presentation-h4-font-size: 0.9em !default;
+$presentation-h5-font-size: 0.8em !default;
+$presentation-h6-font-size: 0.7em !default;
 
 // margins
-$presentation-block-margin: 12px !default;
+$presentation-block-margin: 8px !default;
 
 // --- derive reveal versions of presentation variables for finer-grained override ---
 
@@ -34,6 +42,10 @@ $blockMargin: $revealjs-block-margin !default;
 
 // Code blocks
 $font-family-monospace: $quarto-font-monospace;
+
+// Code snippet font size
+$code-font-size: 20px !default;
+$code-block-font-size: 13px !default;
 
 /*-- scss:rules --*/
 
@@ -51,20 +63,20 @@ a {
 // Unordered lists
 
 .reveal ul {
-    font-size: 28px;
-    padding-left: .5em;
+  font-size: 28px;
+  padding-left: .5em;
 }
 
 .reveal ul li {
-    padding-left: 1em;
+  padding-left: 1em;
 }
 
 // Figures
 .reveal figure {
-    > figcaption{
-        font-size: .5em !important;
-        text-align: center;
-    }
+  > figcaption{
+    font-size: .5em !important;
+    text-align: center;
+  }
 }
 
 .reveal .slide-logo {
@@ -75,4 +87,127 @@ a {
   p {
     font-size: 20px;
   }
+}
+
+// Code snippets
+
+
+.reveal code {
+  font-size: $code-font-size !important;
+  font-family: $font-family-monospace;
+  line-height: 1.5;
+}
+
+
+.reveal pre code {
+  font-size: $code-block-font-size !important;
+  font-family: $font-family-monospace;
+  line-height: 1.5;
+}
+
+// Inline code
+
+.reveal p code,
+.reveal li code {
+  font-size: $code-font-size !important;
+  font-family: $font-family-monospace;
+}
+
+// Tables - compact styling
+.reveal table {
+  font-size: 20px;
+  line-height: 1.2;
+  margin: 15px auto;
+  border-collapse: collapse;
+}
+
+.reveal table th,
+.reveal table td {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  vertical-align: top;
+}
+
+.reveal table th {
+  font-weight: bold;
+  background-color: #f5f5f5;
+  font-size: 18px;
+}
+
+.reveal table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+// Reduce spacing between elements
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+  margin: 0 0 20px 0;
+  line-height: 1.1;
+}
+
+// Specific header font sizes
+.reveal h1 {
+    font-size: 1.5em;
+}
+
+.reveal h2 {
+    font-size: 1.2em;
+}
+
+.reveal h3 {
+    font-size: 1.0em;
+}
+
+.reveal h4 {
+    font-size: 0.9em;
+}
+
+.reveal h5 {
+    font-size: 0.8em;
+}
+
+.reveal h6 {
+    font-size: 0.7em;
+}
+
+.reveal p {
+    margin: 0 0 15px 0;
+}
+
+.reveal ul, .reveal ol {
+    margin: 0 0 15px 0;
+}
+
+.reveal li {
+    margin-bottom: 8px;
+}
+
+// Code blocks spacing
+.reveal pre {
+    margin: 15px 0;
+    box-shadow: none;
+}
+
+.reveal .code-with-copy {
+    margin: 15px 0;
+}
+
+// Blockquotes
+.reveal blockquote {
+    margin: 15px 0;
+    padding: 10px 20px;
+}
+
+// Figures and images
+.reveal figure {
+    margin: 15px 0;
+}
+
+// Section spacing
+.reveal .slides section {
+    padding: 20px 40px;
+}
+
+// Reduce space around slide content
+.reveal .slides section .slide-content {
+    margin-top: 0;
 }
